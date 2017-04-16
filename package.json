@@ -1,26 +1,45 @@
 {
-  "name": "buildtask",
-  "version": "0.0.1",
-  "description": "Dynamically build AWS ECS task definition JSON files",
+  "name": "templater-cli",
+  "version": "1.0.0",
+  "description": "Create a string or file from a template using env variables",
   "main": "index.js",
+  "bin": {
+    "templater": "index.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard | snazzy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/darahayes/buildtask.git"
+    "url": "git+https://github.com/darahayes/templater.git"
   },
   "keywords": [
-    "AWS",
-    "ECS",
-    "task",
-    "definition",
-    "docker"
+    "string",
+    "template",
+    "json",
+    "config",
+    "files"
   ],
   "author": "Dara Hayes <dara.s.hayes@gmail.com> (https://darahayes.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/darahayes/buildtask/issues"
+    "url": "https://github.com/darahayes/templater/issues"
   },
-  "homepage": "https://github.com/darahayes/buildtask#readme"
+  "homepage": "https://github.com/darahayes/templater#readme",
+  "dependencies": {
+    "es6-templater": "^1.0.0",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "snazzy": "^6.0.0",
+    "standard": "^9.0.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
 }

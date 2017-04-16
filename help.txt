@@ -1,0 +1,24 @@
+NAME
+    templater - Create a string/file from a template string/file using env variables
+
+USAGE
+    templater [-i input-file] [-o output-file ] [input text]
+
+OPTIONS
+    -i,--in
+      Path to the template file. If no file is specified input text can be given
+
+    -o, --out
+      Name of output file to create. If no output is specified, the result is printed to STDOUT
+
+EXAMPLE USAGE
+    templater -i template.json -o result.json
+
+    templater -i template.json # prints to STDOUT
+
+    templater 'Hello my name is ${USER}' # Gets USER from environment variables
+
+EXAMPLE USAGE WITH PIPES
+    echo 'Hello my name is ${USER}' | templater -o result.txt
+
+    cat template.json | templater -o result.json
